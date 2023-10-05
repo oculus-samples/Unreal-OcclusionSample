@@ -1,14 +1,28 @@
 # Occlusion Sample
 
-This sample provides blueprints illustrating the use of VR compositor layers to display a UMG UI widgets.
+This sample provides a simple scene with passthrough enabled and a few VR objects to demonstrate the use of Occlusions using the Depth API.
 
-The app displays two spheres that track with the Touch controllers and two UMG widgets rendered as VR compositor layers. One is rendered as a quad layer and the other as a cylinder layer.
+Press the A or X buttons on your controller to cycle through the different occlusion modes:
 
-Actor_Blueprint illustrates rendering a widget into a stereo layer. The widget is first rendered into a material, then the SlateUI texture is pulled from the material into the stereo layer. This is the UMG widget that is rendered to the quad and cylindrical layers in the sample.
+**Disabled**
 
-Open MenuBlueprint to open the UMG widget in the UMG Editor.
+When occlusions are disabled, virtual content will always be rendered on top of passthrough.
 
-NewGameMode and VRCharacter are used to initialize the scene and make the scene display at the appropriate height.
+![Unreal Scene Sample](Media/NoOcclusions.jpg)
+
+**Hard Occlusions**
+
+When hard occlusions are enabled you will see that real objects in your environment (e.g. tables, walls, furniture, hands) will occlude the virtual objects rendered by Unreal based on their relative depths.
+
+Hard occlusions provide a simple non-intrusive way to enable occlusions in your app but have a hard jagged edge at the boundary of occluded objects.
+
+![Unreal Scene Sample](Media/HardOcclusions.jpg)
+
+**Soft Occlusions**
+
+Soft occlusions improve the quality of the edges by applying a smooth gradient so that the transition is less noticeable. However, more intrusive engine changes were required to support this and so you must use Meta's fork of the engine in order to make use of soft occlusions.
+
+![Unreal Scene Sample](Media/SoftOcclusions.jpg)
 
 ## How to Use
 
@@ -28,7 +42,8 @@ git clone https://github.com/oculus-samples/Unreal-OcclusionSample
 
 #### Epic Games Launcher with MetaXR plugin
 
-The easiest way to get started is to use the prebuilt Unreal Engine from the Epic Games Launcher, with MetaXR plugin.
+The easiest way to get started is to use the prebuilt Unreal Engine from the Epic Games Launcher, with MetaXR plugin. **However, if you use this method then only hard occlusions will work. You must use Meta's fork for soft occlusions support.**
+
 
 1. Install the [Epic Games Launcher](https://www.epicgames.com/store/en-US/download)
 2. In the launcher, install UE5 (recommended).
