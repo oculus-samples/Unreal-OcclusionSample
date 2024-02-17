@@ -2,6 +2,8 @@
 
 This sample provides a simple scene with passthrough enabled and a few VR objects to demonstrate the use of Occlusions using the Depth API.
 
+## Occlusion Modes
+
 Press the A or X buttons on your controller to cycle through the different occlusion modes:
 
 **Disabled**
@@ -23,6 +25,10 @@ Hard occlusions provide a simple non-intrusive way to enable occlusions in your 
 Soft occlusions improve the quality of the edges by applying a smooth gradient so that the transition is less noticeable. However, more intrusive engine changes were required to support this and so you must use Meta's fork of the engine in order to make use of soft occlusions.
 
 ![Unreal Scene Sample](Media/SoftOcclusions.jpg)
+
+## Hands removal
+
+In order to see hands removal in action, put the controllers down and hold your hands in front of you until you see the virtual hands appear. Then use the pinch action to toggle hands removal on/off. When hands removal is enabled you should clearly see the virtual hands without being occluded. When hands removal is disabled you will see depth fighting between your real and virtual hands.
 
 ## How to Use
 
