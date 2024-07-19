@@ -30,6 +30,14 @@ Soft occlusions improve the quality of the edges by applying a smooth gradient s
 
 In order to see hands removal in action, put the controllers down and hold your hands in front of you until you see the virtual hands appear. Then use the pinch action to toggle hands removal on/off. When hands removal is enabled you should clearly see the virtual hands without being occluded. When hands removal is disabled you will see depth fighting between your real and virtual hands.
 
+## Environment Depth material graph node
+
+In this sample there is a material named `M_EnvironmentDepth` which demonstrates the use of the Environment Depth material graph node. The material is applied to 2 quads on the left and right of the user when the app starts. The material shows the raw environment depth where red represents objects close to you and blue represents objects far away, the color gradient ranges from 0 to 3 meters and anything beyond will be displayed in blue.
+
+![Unreal Scene Sample](Media/MaterialGraphNode.jpg)
+
+Note: This node is only available in the Meta UE fork, if you load the sample without the fork this node will be missing and the material will show up as a solid red color.
+
 ## How to Use
 
 ### Load the project
@@ -54,8 +62,8 @@ The easiest way to get started is to use the prebuilt Unreal Engine from the Epi
 1. Install the [Epic Games Launcher](https://www.epicgames.com/store/en-US/download)
 2. In the launcher, install UE5 (recommended).
 3. Download and install the MetaXR plugin from the [Unreal Engine 5 Integration download page](https://developer.oculus.com/downloads/package/unreal-engine-5-integration).
-3. Launch the Unreal Editor
-4. From "Recent Projects", click "Browse" and select `OcclusionSample.uproject`
+4. Launch the Unreal Editor
+5. From "Recent Projects", click "Browse" and select `OcclusionSample.uproject`
 
 #### Meta fork of Epic’s Unreal Engine
 
@@ -73,6 +81,8 @@ Make sure you have Visual Studio installed properly:
 
 1. Download the source code from the [Meta fork of Epic’s Unreal Engine on GitHub](https://github.com/Oculus-VR/UnrealEngine).
 2. Follow Epic’s instructions on [Building Unreal Engine from Source](https://docs.unrealengine.com/5.2/en-US/building-unreal-engine-from-source/) to complete the process.
+3. Launch the Unreal Editor
+4. From "Recent Projects", click "Browse" and select `OcclusionSample.uproject`
 
 Depending on your machine, the build may take awhile to complete.
 
